@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 // const {usersRoutes} = require("./routes/users.route")
-// const {productsRoutes} = require("./routes/products.route")
+const {productsRoutes} = require("./routes/product.route")
 const { connection } = require("./config/db");
 // const {authentication} = require("./middlewares/authentication")
 
@@ -18,7 +18,7 @@ app.use(cors());
 
 // app.use("/user", usersRoutes)
 // app.use(authentication)
-// app.use("/products", productsRoutes)
+app.use("/products", productsRoutes)
 
 app.listen(8080, async () => {
   try {
