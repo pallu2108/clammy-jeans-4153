@@ -1,6 +1,6 @@
 .maindiv {
   display: flex;
-  border-bottom: 1px solid red;
+  margin-bottom: 10px;
 }
 .img_1 {
   width: 250px;
@@ -29,4 +29,7 @@
 }
 .ptagdub {
   font-size: small;
+}
+.adub {
+  margin-left: 50px;
 }

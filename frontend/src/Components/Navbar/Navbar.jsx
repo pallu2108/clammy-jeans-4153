@@ -20,7 +20,13 @@ export default function Navbar() {
             />
           </button>
         </div>
-        <div style={{ display: 'flex', marginTop: '20px',marginLeft:"300px"}}>
+        <div
+          style={{
+            display: 'flex',
+            marginTop: '20px',
+            marginLeft: '300px',
+          }}
+        >
           <p className="ptagdub">
             Seller's Corner | Feedback | Blog | Delivery Info
           </p>
@@ -44,7 +50,31 @@ export default function Navbar() {
           />
         </button>
       </div>
-      fgg
+      <div
+        style={{
+          textAlign: 'left',
+          borderBottom: '3px solid #e1e1e1',
+        }}
+      >
+        <a className="adub" href="">
+          Categories
+        </a>
+        <a className="adub" href="">
+          Flash Sale
+        </a>
+        <a className="adub" href="">
+          Best Deals
+        </a>
+        <a className="adub" href="">
+          Shop by Brand
+        </a>
+        <a className="adub" href="">
+          Trending
+        </a>
+        <a className="adub" href="">
+          New Arrivals
+        </a>
+      </div>
     </div>
   );
 }
