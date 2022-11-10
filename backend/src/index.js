@@ -1,10 +1,11 @@
 const express = require("express");
 const cors = require("cors");
- const {userRoutes} = require("./routes/user.route")
+const {userRoutes} = require("./routes/user.route")
 const {productsRoutes} = require("./routes/product.route")
+const cartRoutes = require("./routes/cart.route")
 
 const { connection } = require("./config/db");
- const {authentication} = require("./middlewares/authentication")
+const {authentication} = require("./middlewares/authentication")
 
 const app = express();
 const PORT = 8080;
@@ -17,12 +18,13 @@ app.get("/", (req, res) => {
 
 app.use(cors());
 
-
- app.use("/user", userRoutes)
- app.use(authentication)
+app.use("/user", userRoutes)
 
 app.use("/products", productsRoutes)
 
+app.use(authentication)
+
+app.use("/carts", cartRoutes)
 
 app.listen(8080, async () => {
   try {
