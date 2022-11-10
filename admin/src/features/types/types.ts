@@ -7,11 +7,11 @@ export type productType = {
   mrp: number;
   price: number;
   quantity: number;
-  images: [];
-  colors: [];
-  ddprice: {};
-  productDesc: {};
-  productFeatures: {};
+  images: string[];
+  colors: string[];
+  ddprice: {[index: string]: number};
+  productDesc: {[index: string]: string};
+  productFeatures: {[index: string]: string};
   category: string;
   subcategory: string;
   flash?: boolean;

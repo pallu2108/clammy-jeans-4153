@@ -2,13 +2,13 @@ import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import type { productType, productSliceType } from "../types/types";
 import axios, { AxiosResponse } from "axios";
 
-const DBLINK = "http://localhost:8080";
+const DBLINK = "https://truebuy.onrender.com";
 
 export const getProducts = createAsyncThunk(
   "products/getProducts",
   async (thunkapi) => {
     try {
-      const res = await axios.get<productType[]>(
+      const res = await axios.get<productType>(
         `${DBLINK}/products`
       );
       console.log(res.data);
@@ -18,6 +18,7 @@ export const getProducts = createAsyncThunk(
     }
   }
 );
+getProducts();
 
 // export const addClients = createAsyncThunk(
 //   "clients/addClients",
@@ -60,7 +61,7 @@ const initialState: productSliceType = {
   loading: false,
   error: false,
   errmsg: "string",
-  clients: [],
+  products: [],
 };
 
 const product: productType = {
@@ -85,8 +86,8 @@ const product: productType = {
   newArrival: false,
 };
 
-const clientSlice = createSlice({
-  name: "clients",
+const productSlice = createSlice({
+  name: "products",
   initialState,
   reducers: {},
   extraReducers(builder) {
@@ -99,7 +100,7 @@ const clientSlice = createSlice({
         (state, action: PayloadAction<productType[]>) => {
           (state.loading = false),
             (state.error = false),
-            (state.clients = action.payload);
+            (state.products = action.payload);
         }
       )
       .addCase(getProducts.rejected, (state, action: PayloadAction<any>) => {
@@ -146,4 +147,4 @@ const clientSlice = createSlice({
   },
 });
 
-export default clientSlice.reducer;
+export default productSlice.reducer;
