@@ -24,5 +24,5 @@ export type productSliceType = {
   loading: boolean;
   error: boolean;
   errmsg: string;
-  clients: productType[];
+  products: productType[];
 };

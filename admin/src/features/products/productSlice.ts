@@ -5,7 +5,7 @@ import axios, { AxiosResponse } from "axios";
 const DBLINK = "http://localhost:8080";
 
 export const getProducts = createAsyncThunk(
-  "products/etProducts",
+  "products/getProducts",
   async (thunkapi) => {
     try {
       const res = await axios.get<productType[]>(
