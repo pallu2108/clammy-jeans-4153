@@ -1,8 +1,12 @@
 import './App.css';
-import Navbar from './Components/Navbar/Navbar';
+import Footer from './Components/Footer/Footer';
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
