@@ -3,14 +3,12 @@ import './App.css';
 import MainRoutes from './Pages/MainRoutes';
 
 function App() {
-
   return (
     <div className="App">
       {/* <Navbar /> */}
-      <MainRoutes/>
+      <MainRoutes />
     </div>
   );
- 
 }
 
 export default App;
