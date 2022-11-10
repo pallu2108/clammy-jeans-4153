@@ -14,6 +14,7 @@ productsRoutes.get("/", async (req, res) => {
 
 productsRoutes.post("/create", async (req, res) => {
   const {
+    id,
     title,
     brand,
     rating,
@@ -33,6 +34,7 @@ productsRoutes.post("/create", async (req, res) => {
     newArrival,
   } = req.body;
   const product = new ProductModel({
+    id,
     title,
     brand,
     rating,
