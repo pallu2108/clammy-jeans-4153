@@ -22,7 +22,7 @@ userRoutes.post("/signup", async(req,res)=>{
                 if(err){
                     res.send({"Error":"Something wrong"})
                 }else{
-                    const newUser= new userModel({email, password:hash})
+                    const newUser= new userModel({email, password:hash, role})
                     await newUser.save()
                     res.send({"message":"Succesfully Registered"})
                 }
