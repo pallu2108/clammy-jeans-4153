@@ -9,18 +9,29 @@ const userRoutes=Router()
 userRoutes.get("/",(req,res)=>{
     res.send("This is homepage")
 })
-userRoutes.post("/signup",(req,res)=>{
-    let{email,password}=req.body
+userRoutes.post("/signup", async(req,res)=>{
+    let{email, password, role}=req.body
 
-    bcrypt.hash(password,6,async function(err,hash){
-        if(err){
-            res.send({"Error":"Something wrong"})
-        }else{
-            const newUser= new userModel({email,password:hash})
-            await newUser.save()
-            res.send({"message":"Succesfully Registered"})
+    try{
+        let user = await userModel.findOne({email:email})
+        if(user){
+           return res.status(409).send("Already Registered, Please Login")
         }
-    })
+        else{
+            bcrypt.hash(password,6,async function(err,hash){
+                if(err){
+                    res.send({"Error":"Something wrong"})
+                }else{
+                    const newUser= new userModel({email, password:hash})
+                    await newUser.save()
+                    res.send({"message":"Succesfully Registered"})
+                }
+            })
+        }
+    }catch(err){
+        return res.status(401).send(e.message)
+    }
+
 })
 
 userRoutes.post("/login",async(req,res)=>{
