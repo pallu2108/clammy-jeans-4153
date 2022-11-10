@@ -6,7 +6,11 @@ const cartSchema = new mongoose.Schema({
     ref: "product",
     required: true,
   },
-  userId: { type: String, ref: "register", required: true },
+  userId: {
+    type: String,
+    ref: "register",
+    required: true,
+  },
   quantity: {
     type: Number,
     required: true,
