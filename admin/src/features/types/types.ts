@@ -1,3 +1,20 @@
+export type authStateSliceType = {
+    loading: boolean;
+    error: boolean;
+    token: string;
+    isAuth: boolean
+}
+
+export type authActionpropType = {
+    type: string;
+    payload: {status: string, token: string, username: string, email: string, password: string, message:string}
+}
+
+export type authResType = {
+    token: string;
+    status: string
+}
+
 export type productType = {
   _id?: string;
   id: number;
@@ -7,11 +24,11 @@ export type productType = {
   mrp: number;
   price: number;
   quantity: number;
-  images: [];
-  colors: [];
-  ddprice: {};
-  productDesc: {};
-  productFeatures: {};
+  images: string[];
+  colors: string[];
+  ddprice: {[index: string]: number};
+  productDesc: {[index: string]: string};
+  productFeatures: {[index: string]: string};
   category: string;
   subcategory: string;
   flash?: boolean;
@@ -26,3 +43,17 @@ export type productSliceType = {
   errmsg: string;
   products: productType[];
 };
+
+export type userType = {
+    email:string;
+    password:string;
+    role:string
+}
+
+export type userSliceType = {
+    loading:boolean;
+    error:boolean;
+    errmsg:string;
+    successMsg:string;
+    user?:userType[];
+}

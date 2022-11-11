@@ -2,6 +2,7 @@ const { Router } = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
+const {adminAuth} = require("../middlewares/adminAuth")
 
 const { ProductModel } = require("../models/Product.model");
 
@@ -12,7 +13,7 @@ productsRoutes.get("/", async (req, res) => {
   res.send(products);
 });
 
-productsRoutes.post("/create", async (req, res) => {
+productsRoutes.post("/create", adminAuth, async (req, res) => {
   const {
     id,
     title,
@@ -62,7 +63,7 @@ productsRoutes.post("/create", async (req, res) => {
   }
 });
 
-productsRoutes.delete("/delete/:productId", async (req, res) => {
+productsRoutes.delete("/delete/:productId", adminAuth, async (req, res) => {
   const { productId } = req.params;
   const deletedProduct = await ProductModel.findOneAndDelete({
     _id: productId
@@ -75,7 +76,7 @@ productsRoutes.delete("/delete/:productId", async (req, res) => {
   }
 });
 
-productsRoutes.patch("/edit/:productId", async (req, res) => {
+productsRoutes.patch("/edit/:productId", adminAuth, async (req, res) => {
   const { productId } = req.params;
   const updatedProduct = await ProductModel.findOneAndUpdate(
     { _id: productId},

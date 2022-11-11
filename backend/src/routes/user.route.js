@@ -1,13 +1,15 @@
 const{Router}=require("express")
 const {userModel}= require("../models/User.model")
+const {adminAuth} = require("../middlewares/adminAuth")
 
 const bcrypt = require("bcryptjs")
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
 const userRoutes=Router()
 
-userRoutes.get("/",(req,res)=>{
-    res.send("This is homepage")
+userRoutes.get("/", adminAuth, async (req,res)=>{
+    let customers = await userModel.find({role:"customer"})
+    res.send(customers)
 })
 userRoutes.post("/signup", async(req,res)=>{
     let{email, password, role}=req.body
@@ -47,7 +49,7 @@ userRoutes.post("/login",async(req,res)=>{
             })
 
         }else{
-            res.send({"Error":"Something Error"})
+            res.status(400).send({"Error":"Something Error"})
         }
     })
 })

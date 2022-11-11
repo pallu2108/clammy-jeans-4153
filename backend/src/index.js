@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const {userRoutes} = require("./routes/user.route")
 const {productsRoutes} = require("./routes/product.route")
+const {adminRoutes} = require("./routes/admin.route")
 const cartRoutes = require("./routes/cart.route")
 
 const { connection } = require("./config/db");
@@ -19,6 +20,8 @@ app.get("/", (req, res) => {
 app.use(cors());
 
 app.use("/user", userRoutes)
+
+app.use("/admin", adminRoutes)
 
 app.use("/products", productsRoutes)
 
