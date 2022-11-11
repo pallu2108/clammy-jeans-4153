@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Footer from '../Components/Footer/Footer';
@@ -9,9 +10,13 @@ import Category from './Category';
 import Checkout from './Checkout';
 import Editcart from './Editcart';
 
+
 import FlashRecords from './FlashRecords';
+import Modala from './Modal';
+import Modal from './Modal';
 import New from './New';
 import ShopByBrands from './ShopByBrands';
+import Success from './Success';
 import Trend from './Trend';
 
 const MainRoutes = () => {
@@ -32,6 +37,8 @@ const MainRoutes = () => {
         <Route path="/checkout" element={<Checkout />}></Route>
         <Route path='/category' element={<Category/>}> </Route>
         <Route path="/editcart" element={<Editcart/>}></Route>
+        <Route path='/modal' element={<Modala/>}> </Route>
+        <Route path="/success" element={<Success/>} ></Route>
       </Routes>
 
       <Footer />

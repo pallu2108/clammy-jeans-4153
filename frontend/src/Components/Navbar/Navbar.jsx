@@ -66,14 +66,14 @@ const Drop = () => {
              </Box>
 
             <Box w="170px">
-            <Heading as={'h4'} size={'sm'}>
+            <Heading as={'h4'} size={'sm'} _hover={{textDecoration:"underline"}}>
               FLASH SALE
             </Heading>
             <MenuItem>Flash Sale</MenuItem>
           </Box>  
 
           <Box w="170px">
-            <Heading as={'h4'} size={'sm'}>
+            <Heading as={'h4'} size={'sm'} _hover={{textDecoration:"underline"}}>
               HOME & LIVING
             </Heading>
             <MenuItem>Bath & Storage</MenuItem>
@@ -96,8 +96,8 @@ const Drop = () => {
             <MenuItem>Marvel</MenuItem>
             <MenuItem>Toys</MenuItem>
           </Box>
-          <Box w="170px">  
-            <Heading as={'h4'} size={'sm'}>
+          <Box w="170px" >  
+            <Heading as={'h4'} size={'sm'} _hover={{textDecoration:"underline"}}>
               MEANBUY DEALS
             </Heading>
             <MenuItem>Gifts</MenuItem>

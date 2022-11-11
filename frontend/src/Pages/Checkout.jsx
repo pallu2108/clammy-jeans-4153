@@ -1,12 +1,21 @@
 import React from 'react'
 import img_1  from "../Images/img_1.png"
-import {
+import { Link } from 'react-router-dom'
+  import {
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
    
-    Box, Checkbox, Flex,Input,Text, Image, Button
+    ModalCloseButton,Text ,  Button, useDisclosure,Image, Box, Spacer, Flex, Input, Checkbox
   } from '@chakra-ui/react'
+  // import img_1 from "../Images/img_1.png"
+
 
   const car=["cash on Delivery","Credit/Debit Card","Net Banking","EMI","UPI","Paytm","Simple Pay"]
 const Checkout = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <Box border={"black"} w="100%" h="1000px">
       <Flex h="1000px" pt="50px" border={"black"} gap="8px" pl="100px" pr="100px">
@@ -96,7 +105,95 @@ const Checkout = () => {
           <Box>
           <Text pl="50px" mt="40px" fontSize='xs'>3 interest free payment of Re 2199.24 with simpl!</Text>
           </Box>
-          <Button ml="20px" mt="20px" w="90%" bg="orange" color={"white"}> PAY NOW!</Button>
+          
+          <Button onClick={onOpen} ml="20px" mt="20px" w="90%" bg="orange" color={"white"}>
+            
+             PAY NOW!</Button>
+          {/* <Button onClick={onOpen}>Open Modal</Button> */}
+
+<Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
+  <ModalOverlay />
+  <ModalContent>
+    <ModalHeader>
+        <Image w="200px" h="50px" src={img_1}></Image>
+    </ModalHeader>
+    <Box >
+
+    <ModalCloseButton />
+    </Box>
+    <Box>
+        <Text pl="20px" fontSize={"sm"} fontWeight="bold">
+           Add New Card
+        </Text>
+      </Box>
+      <Box>
+        <Flex>
+        <Text mt="50px" pl="50px" fontSize={"sm"} >
+           Card Number
+        </Text>
+        <Spacer/>
+        <Text mt="50px" pr="80px" fontSize={"sm"} >
+          Exp
+        </Text>
+
+        </Flex>
+        <Flex>
+        <Input ml="20px" w="150px" fontSize={"xs"} placeholder="Card Number" />
+           
+        
+        <Spacer/>
+        <Input  w="150px"  mr="20px" fontSize={"sm"} placeholder="Exp"/>
+        
+
+        </Flex>
+      </Box> 
+      <Box >
+        <Flex mt="30px">
+        <Text  pl="50px" fontSize={"sm"} >
+          Your Name
+        </Text>
+        <Spacer/>
+        <Text  pr="80px" fontSize={"sm"} >
+          CVV
+        </Text>
+
+        </Flex>
+        <Flex>
+        <Input ml="20px" w="150px" fontSize={"xs"} placeholder="Card Holder Name" />
+           
+        
+        <Spacer/>
+        <Input  w="150px"  mr="20px" fontSize={"sm"} placeholder="CVV"/>
+        
+
+        </Flex>
+      </Box>
+      
+      <Box pl="20px" mt="20px">
+
+        <Checkbox colorScheme='orange'><Text fontSize={"sm"}> Save card securely for future payment</Text></Checkbox>
+      </Box>
+
+    {/* <ModalBody>
+      <Box>
+        <Text fontSize={"lg"} fontWeight="bold">
+           Add New Card
+        </Text>
+      </Box>
+      
+    </ModalBody> */}
+
+    <ModalFooter>
+       <Link to="/success">
+      <Button w="100%" colorScheme='orange' mr={3} onClick={onClose}>
+        Pay Rs 3445
+      </Button>
+       </Link>
+      
+    </ModalFooter>
+  </ModalContent>
+</Modal>
+          
         </Box>
 
       </Box>
