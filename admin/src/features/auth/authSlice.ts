@@ -3,14 +3,14 @@ import axios from "axios";
 
 import {authStateSliceType, authResType} from "../types/types"
 
-const DBLINK = "https://truebuy.onrender.com";
+const DBLINK = "http://localhost:8080";
 
 //login action
 export const login = createAsyncThunk(
     "users/auth/login",
     async(data:{email:string, password:string}, thunkApi)=>{
         try{
-            const response = await axios.post<authResType>(`${DBLINK}/user/login`, data);
+            const response = await axios.post<authResType>(`${DBLINK}/admin`, data);
             console.log(response.data)
             return response.data
         }

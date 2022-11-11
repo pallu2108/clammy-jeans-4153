@@ -30,7 +30,7 @@ const ProductsComponent = () => {
       </Box>
       {products.loading?
       <Flex w="100vw" h={"100vh"} mx={"auto"} align={"center"} justify={"center"} bg={"rgba(245,250,254,.5)"} backgroundBlendMode={"hard-light"} position={"absolute"} top={"0"} left={"0"}>
-          <Image src={loader} />
+          <Image borderRadius={"50%"} src={loader} />
       </Flex>:null}
     </Box>
   );

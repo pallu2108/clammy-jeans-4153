@@ -29,6 +29,7 @@ type credsProp = {
 const Login = () => {
   const isAuth = useAppSelector((store) => store.authSlice.isAuth);
   const Auth = useAppSelector((store) => store.authSlice);
+  console.log(Auth);
   const [loginCreds, setLoginCreds] = useState<credsProp>({
     email: "",
     password: "",
@@ -168,7 +169,7 @@ console.log(isAuth)
     </form>
     {Auth.loading?
       <Flex w="100vw" h={"100vh"} mx={"auto"} align={"center"} justify={"center"} bg={"rgba(245,250,254,.5)"} backgroundBlendMode={"hard-light"} position={"absolute"} top={"0"} left={"0"}>
-          <Image src={loader} />
+          <Image borderRadius={"50%"} src={loader} />
       </Flex>:null}
     </Box>
   );
