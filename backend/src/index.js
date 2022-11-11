@@ -29,7 +29,6 @@ app.use("/carts", cartRoutes)
 app.listen(8080, async () => {
   try {
     await connection;
-    
     console.log("Connected to db");
   } catch (err) {
     console.log("Error connnecting to DB");
