@@ -2,7 +2,7 @@ import './Navbar.css';
 import img_1 from '../../Images/img_1.png';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronDownIcon  } from '@chakra-ui/icons'
+import { ChevronDownIcon } from '@chakra-ui/icons';
 import {
   Drawer,
   DrawerBody,
@@ -12,39 +12,29 @@ import {
   DrawerCloseButton,
   Button,
   useDisclosure,
-  Box,Text, Flex, Spacer,Image,MenuButton,Menu, 
-} from '@chakra-ui/react'
-import {
- 
-  MenuList,
-  MenuItem,
-
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
-  
- Heading
-} from '@chakra-ui/react'
-
+  Box,
+  Text,
+  Flex,
+  Spacer,
+  Image,
+  MenuButton,
+  Menu,
+} from '@chakra-ui/react';
+import { MenuList, MenuItem, Heading } from '@chakra-ui/react';
 
 const Drop = () => {
   return (
     <>
       <MenuList pl="10px">
-        <Flex fontSize={"sm"} 
-        w="900px"
-        gap="10px"
-        >
-          <Box >
-            <Heading as={"h4"} size={"sm"}>
+        <Flex fontSize={'sm'} w="900px" gap="10px">
+          <Box>
+            <Heading as={'h4'} size={'sm'}>
               MEN
             </Heading>
-            
-              <MenuItem>Watches</MenuItem>
-              
-              
-            <Heading as={"h4"} mt="40px" size={"sm"}>
+
+            <MenuItem>Watches</MenuItem>
+
+            <Heading as={'h4'} mt="40px" size={'sm'}>
               WOMEN
             </Heading>
             <MenuItem w="200px">Makeup Accessories</MenuItem>
@@ -53,7 +43,7 @@ const Drop = () => {
             <MenuItem>Watches</MenuItem>
           </Box>
           <Box>
-            <Heading as={"h4"} size={"sm"}>
+            <Heading as={'h4'} size={'sm'}>
               ELECTRONICS
             </Heading>
             <MenuItem>Gaming Accessories</MenuItem>
@@ -61,7 +51,7 @@ const Drop = () => {
             <MenuItem>Laptops</MenuItem>
             <MenuItem>Small Appliances</MenuItem>
 
-            <Heading as={"h4"} size={"sm"}>
+            <Heading as={'h4'} size={'sm'}>
               KIDS & MOMS
             </Heading>
             <MenuItem>DIY Toys</MenuItem>
@@ -71,7 +61,7 @@ const Drop = () => {
             <MenuItem>Gift</MenuItem>
           </Box>
           <Box>
-            <Heading as={"h4"} size={"sm"}>
+            <Heading as={'h4'} size={'sm'}>
               MOBILE & TABS
             </Heading>
             <MenuItem>Apple Accessories</MenuItem>
@@ -84,7 +74,7 @@ const Drop = () => {
             <MenuItem>Wireless Speakers</MenuItem>
           </Box>
           <Box>
-            <Heading as={"h4"} size={"sm"}>
+            <Heading as={'h4'} size={'sm'}>
               HOME & LIVING
             </Heading>
             <MenuItem>Bath & Storage</MenuItem>
@@ -100,18 +90,18 @@ const Drop = () => {
             <MenuItem>Water Bottles</MenuItem>
           </Box>
           <Box>
-            <Heading as={"h4"} size={"sm"}>
+            <Heading as={'h4'} size={'sm'}>
               FLASH SALE
             </Heading>
             <MenuItem>Flash Sale</MenuItem>
 
-            <Heading as={"h4"} size={"sm"}>
+            <Heading as={'h4'} size={'sm'}>
               MEANBUY DEALS
             </Heading>
             <MenuItem>Electronics</MenuItem>
-           
-              <MenuItem>Men's Watches</MenuItem>
-            
+
+            <MenuItem>Men's Watches</MenuItem>
+
             <MenuItem>Ramadan Gifts</MenuItem>
             <MenuItem>Smart Watches</MenuItem>
             <MenuItem>Top Selling Ear Buds</MenuItem>
@@ -122,12 +112,9 @@ const Drop = () => {
   );
 };
 
-
-
-
 export default function Navbar() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef()
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
   // const handlechange = () => {
   //   alert('hello ajay');
   // };
@@ -135,8 +122,8 @@ export default function Navbar() {
     <div className="div">
       <div className="maindiv">
         <div className="firstnavdiv">
-        <a href="/">
-          <img className="img_1" src={img_1} alt="" />
+          <a href="/">
+            <img className="img_1" src={img_1} alt="" />
           </a>
           <input type="text" placeholder="Search.." />
           <button>
@@ -145,7 +132,6 @@ export default function Navbar() {
               src="https://cdn-icons-png.flaticon.com/128/2811/2811790.png"
               alt=""
             />
-            
           </button>
         </div>
         <div
@@ -165,10 +151,14 @@ export default function Navbar() {
             <div style={{ fontWeight: 'bolder' }}>Welcome Guest</div>
           </div>
         </div>
-        <Button ref={btnRef} bg="transparent" onClick={onOpen}>
-        <img
+        <Button
+          style={{ marginTop: '30px', background: 'white' }}
+          ref={btnRef}
+          bg="transparent"
+          onClick={onOpen}
+        >
+          <img
             style={{
-              marginTop: '40px',
               width: '45px',
               marginLeft: '20px',
               height: '45px',
@@ -176,59 +166,82 @@ export default function Navbar() {
             src="https://cdn-icons-png.flaticon.com/128/1972/1972372.png"
             alt=""
           />
-      </Button>
-      <Drawer
-        isOpen={isOpen}
-        placement='right'
-        onClose={onClose}
-        finalFocusRef={btnRef}
-      >
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          {/* <DrawerHeader> */}
-          <br></br>
-          <Flex mt="20px" mb="10px" pl="25px" pr="25px">
-
-            <Box><Text>VIEW CART</Text></Box>
-             <Spacer/>
-            <Box><Text>CART TOTAL</Text></Box>
-          </Flex>
-          {/* </DrawerHeader> */}
-          <Box>
-            <Button w="50%" bg="black"  color={"white"}><Text fontSize='md'>EDIT CART</Text></Button>
-            <Button w="50%"   bg={"white"}><Link to="/checkout"><Text fontSize='md'>CHECKOUT CART</Text></Link></Button>
-            
-          </Box>
-
-          <DrawerBody>
-           <Box>
-            <Flex mt="50px">
-                <Box>
-                    
-                    <Box>
-                    <Image w="80px" h="70px" src='https://bit.ly/dan-abramov' alt='product' />
-                    </Box>
-                    <Box>
-                        <Text w="120px" color={"orange.300"}  fontWeight={"bold"}>Delivery: December 8, 2022</Text>
-                    </Box>
-                </Box>
-                <Box>
-                    <Text fontWeight={"bold"} fontSize="xs">1 * Mens Casual Business watch</Text>
-                    <Text mt="30px" color={"gray"} fontSize="sm">COLOR: BEIGE</Text>
-                    <Text color={"gray"} as="del" fontSize="sm">Price: 9,999</Text>
-                    <Text color={"gray"} fontSize="sm">Your Price: 2,299.00</Text>
-                    
-                </Box>
+        </Button>
+        <Drawer
+          isOpen={isOpen}
+          placement="right"
+          onClose={onClose}
+          finalFocusRef={btnRef}
+        >
+          <DrawerOverlay />
+          <DrawerContent>
+            <DrawerCloseButton />
+            {/* <DrawerHeader> */}
+            <br></br>
+            <Flex mt="20px" mb="10px" pl="25px" pr="25px">
+              <Box>
+                <Text>VIEW CART</Text>
+              </Box>
+              <Spacer />
+              <Box>
+                <Text>CART TOTAL</Text>
+              </Box>
             </Flex>
-           </Box>
-          </DrawerBody>
+            {/* </DrawerHeader> */}
+            <Box>
+              <Button w="50%" bg="black" color={'white'}>
+                <Text fontSize="md">EDIT CART</Text>
+              </Button>
+              <Button w="50%" bg={'white'}>
+                <Link to="/checkout">
+                  <Text fontSize="md">CHECKOUT CART</Text>
+                </Link>
+              </Button>
+            </Box>
 
-          <DrawerFooter>
-           
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
+            <DrawerBody>
+              <Box>
+                <Flex mt="50px">
+                  <Box>
+                    <Box>
+                      <Image
+                        w="80px"
+                        h="70px"
+                        src="https://bit.ly/dan-abramov"
+                        alt="product"
+                      />
+                    </Box>
+                    <Box>
+                      <Text
+                        w="120px"
+                        color={'orange.300'}
+                        fontWeight={'bold'}
+                      >
+                        Delivery: December 8, 2022
+                      </Text>
+                    </Box>
+                  </Box>
+                  <Box>
+                    <Text fontWeight={'bold'} fontSize="xs">
+                      1 * Mens Casual Business watch
+                    </Text>
+                    <Text mt="30px" color={'gray'} fontSize="sm">
+                      COLOR: BEIGE
+                    </Text>
+                    <Text color={'gray'} as="del" fontSize="sm">
+                      Price: 9,999
+                    </Text>
+                    <Text color={'gray'} fontSize="sm">
+                      Your Price: 2,299.00
+                    </Text>
+                  </Box>
+                </Flex>
+              </Box>
+            </DrawerBody>
+
+            <DrawerFooter></DrawerFooter>
+          </DrawerContent>
+        </Drawer>
         {/* <button onClick={handlechange}>
           <img
             style={{
@@ -249,8 +262,8 @@ export default function Navbar() {
         }}
       >
         <Box className="adub" href="">
-        <Menu>
-            <MenuButton bg={"none"} m={0}>
+          <Menu>
+            <MenuButton bg={'none'} m={0}>
               Categories
               <ChevronDownIcon />
             </MenuButton>
@@ -259,10 +272,9 @@ export default function Navbar() {
           {/* Categories */}
         </Box>
         <Box>
-
-        <a className="adub" href="/flash">
-          Flash Sale
-        </a>
+          <a className="adub" href="/flash">
+            Flash Sale
+          </a>
         </Box>
         <a className="adub" href="/bestdeals">
           Best Deals
