@@ -6,7 +6,7 @@ const adminAuth = (req,res,next)=>{
 
     jwt.verify(token,process.env.privateKey,async function(err,decoded){
         if(err){
-            res.send({"Error":"Something error"})
+            res.status(400).send({"Error":"Something error"})
         }else{
             req.body.userId=decoded.userId
             let admin = await userModel.findOne({_id: decoded.userId});
@@ -14,7 +14,7 @@ const adminAuth = (req,res,next)=>{
                 next()
             }
             else{
-                res.send("Not Authorised, Contact Admin")
+                res.status(400).send("Not Authorised, Contact Admin")
             }
         }
     })
