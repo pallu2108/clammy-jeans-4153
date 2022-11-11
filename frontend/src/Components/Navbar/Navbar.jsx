@@ -26,86 +26,101 @@ const Drop = () => {
   return (
     <>
       <MenuList pl="10px">
-        <Flex fontSize={'sm'} w="900px" gap="10px">
+        <Flex fontSize={'sm'} w="100%" gap="5px">
           <Box>
-            <Heading as={'h4'} size={'sm'}>
+            <Heading as={'h4'} size={'sm'} _hover={{textDecoration:"underline"}}>
               MEN
             </Heading>
 
             <MenuItem>Watches</MenuItem>
 
-            <Heading as={'h4'} mt="40px" size={'sm'}>
+            <Heading as={'h4'} mt="40px" size={'sm'} _hover={{textDecoration:"underline"}}>
               WOMEN
             </Heading>
-            <MenuItem w="200px">Makeup Accessories</MenuItem>
-            <MenuItem>Fashion</MenuItem>
-            <MenuItem>Jewellery</MenuItem>
+            <MenuItem w="190px">Makeup Accessories</MenuItem>
+            <MenuItem>Clothing</MenuItem>
+            <MenuItem>handbags & Clutches</MenuItem>
             <MenuItem>Watches</MenuItem>
+            <MenuItem>Ballet Flats</MenuItem>
+            <MenuItem>Sandals</MenuItem>
+            
           </Box>
-          <Box>
-            <Heading as={'h4'} size={'sm'}>
+          <Box w="170px">
+            <Heading as={'h4'} size={'sm'} _hover={{textDecoration:"underline"}}>
               ELECTRONICS
             </Heading>
-            <MenuItem>Gaming Accessories</MenuItem>
+            <MenuItem >Gaming Accessories</MenuItem>
             <MenuItem>Keyboards & Mouse</MenuItem>
-            <MenuItem>Laptops</MenuItem>
             <MenuItem>Small Appliances</MenuItem>
+            </Box>
 
-            <Heading as={'h4'} size={'sm'}>
-              KIDS & MOMS
+            <Box w="170px">
+            <Heading as={'h4'} size={'sm'} _hover={{textDecoration:"underline"}}>
+              ESSENTIALS
             </Heading>
-            <MenuItem>DIY Toys</MenuItem>
-            <MenuItem>Kid's Shoes</MenuItem>
-            <MenuItem>Water Bottle</MenuItem>
-            <MenuItem>Sports Bluetooth</MenuItem>
-            <MenuItem>Gift</MenuItem>
-          </Box>
-          <Box>
+            <MenuItem >Home Essential</MenuItem>
+            <MenuItem>Men's Essentials</MenuItem>
+            <MenuItem>School Backpacks</MenuItem>
+            <MenuItem >Sport Essential</MenuItem>
+            <MenuItem>Women Essentials</MenuItem>
+             </Box>
+
+            <Box w="170px">
             <Heading as={'h4'} size={'sm'}>
-              MOBILE & TABS
+              FLASH SALE
             </Heading>
-            <MenuItem>Apple Accessories</MenuItem>
-            <MenuItem>Blutooth Earphone</MenuItem>
-            <MenuItem>Mobile Accessories</MenuItem>
-            <MenuItem>Power Banks</MenuItem>
-            <MenuItem>Sporting Bluetooth</MenuItem>
-            <MenuItem>Wired Headphones</MenuItem>
-            <MenuItem>Wireless Chargers</MenuItem>
-            <MenuItem>Wireless Speakers</MenuItem>
-          </Box>
-          <Box>
+            <MenuItem>Flash Sale</MenuItem>
+          </Box>  
+
+          <Box w="170px">
             <Heading as={'h4'} size={'sm'}>
               HOME & LIVING
             </Heading>
             <MenuItem>Bath & Storage</MenuItem>
-            <MenuItem>Fitness Merchandise</MenuItem>
             <MenuItem>Gardening</MenuItem>
             <MenuItem>Home Decor</MenuItem>
             <MenuItem>Home Improvement</MenuItem>
             <MenuItem>Kitchen Wares</MenuItem>
             <MenuItem>Nordic Ceilingh Lights</MenuItem>
-            <MenuItem>Pet Products</MenuItem>
-            <MenuItem>USB Fans</MenuItem>
-            <MenuItem>Wall Decor</MenuItem>
-            <MenuItem>Water Bottles</MenuItem>
+            
           </Box>
-          <Box>
-            <Heading as={'h4'} size={'sm'}>
-              FLASH SALE
+          
+            <Box w="170px">
+            <Heading as={'h4'} size={'sm'}  _hover={{textDecoration:"underline"}}>
+              KIDS & MOMS
             </Heading>
-            <MenuItem>Flash Sale</MenuItem>
-
+            <MenuItem>Action Figures</MenuItem>
+            <MenuItem>Discovery Adventures</MenuItem>
+            <MenuItem>Disney</MenuItem>
+            <MenuItem>Hello Kitty</MenuItem>
+            <MenuItem>Marvel</MenuItem>
+            <MenuItem>Toys</MenuItem>
+          </Box>
+          <Box w="170px">  
             <Heading as={'h4'} size={'sm'}>
               MEANBUY DEALS
             </Heading>
+            <MenuItem>Gifts</MenuItem>
             <MenuItem>Electronics</MenuItem>
 
             <MenuItem>Men's Watches</MenuItem>
-
-            <MenuItem>Ramadan Gifts</MenuItem>
             <MenuItem>Smart Watches</MenuItem>
             <MenuItem>Top Selling Ear Buds</MenuItem>
           </Box>
+
+          <Box w="170px">
+            <Heading as={'h4'} size={'sm'} _hover={{textDecoration:"underline"}}>
+              MOBILE & TABS
+            </Heading>
+            <MenuItem>Blutooth Earphone</MenuItem>
+            <MenuItem>Mobile Accessories</MenuItem>
+            <MenuItem>Sporting Bluetooth</MenuItem>
+            <MenuItem>Wired Headphones</MenuItem>
+            <MenuItem>Wireless Chargers</MenuItem>
+            <MenuItem>Wireless Speakers</MenuItem>
+          </Box>
+          
+       
         </Flex>
       </MenuList>
     </>
@@ -190,7 +205,9 @@ export default function Navbar() {
             {/* </DrawerHeader> */}
             <Box>
               <Button w="50%" bg="black" color={'white'}>
+                <Link to="/editcart" >
                 <Text fontSize="md">EDIT CART</Text>
+                </Link>
               </Button>
               <Button w="50%" bg={'white'}>
                 <Link to="/checkout">
