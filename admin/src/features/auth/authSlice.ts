@@ -11,6 +11,7 @@ export const login = createAsyncThunk(
     async(data:{email:string, password:string}, thunkApi)=>{
         try{
             const response = await axios.post<authResType>(`${DBLINK}/user/login`, data);
+            console.log(response.data)
             return response.data
         }
         catch(err:any){
@@ -22,8 +23,8 @@ export const login = createAsyncThunk(
 const initialState: authStateSliceType = {
     loading: false,
     error: false,
-    token: localStorage.getItem("token") || "",
-    isAuth: localStorage.getItem("token")?true:false
+    token: localStorage.getItem("tokentruebuy") || "",
+    isAuth: localStorage.getItem("tokentruebuy")?true:false
 }
 
 const authSlice = createSlice({
@@ -34,7 +35,7 @@ const authSlice = createSlice({
             console.log("logout")
             state.isAuth = false
             state.token=""
-            localStorage.removeItem("token")
+            localStorage.removeItem("tokentruebuy")
         }
     },
     extraReducers(builder){
@@ -48,7 +49,7 @@ const authSlice = createSlice({
             state.isAuth = true,
             state.error = false,
             state.token = action.payload.token,
-            localStorage.setItem("token", action.payload.token)
+            localStorage.setItem("tokentruebuy", action.payload.token)
         })
         .addCase(login.rejected, (state, action:PayloadAction<any>)=>{
             state.loading = false,

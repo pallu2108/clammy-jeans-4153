@@ -1,8 +1,9 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { getProducts } from "../features/products/productSlice";
 import { useAppDispatch, useAppSelector } from "../features/hooks";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image } from "@chakra-ui/react";
 import ProjectCard from "./ProjectCard";
+import loader from "../assets/loader.gif"
 
 const ProductsComponent = () => {
   const dispatch = useAppDispatch();
@@ -27,6 +28,10 @@ const ProductsComponent = () => {
           
         )}
       </Box>
+      {products.loading?
+      <Flex w="100vw" h={"100vh"} mx={"auto"} align={"center"} justify={"center"} bg={"rgba(245,250,254,.5)"} backgroundBlendMode={"hard-light"} position={"absolute"} top={"0"} left={"0"}>
+          <Image src={loader} />
+      </Flex>:null}
     </Box>
   );
 };
