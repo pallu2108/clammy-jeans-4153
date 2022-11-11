@@ -43,3 +43,17 @@ export type productSliceType = {
   errmsg: string;
   products: productType[];
 };
+
+export type userType = {
+    email:string;
+    password:string;
+    role:string
+}
+
+export type userSliceType = {
+    loading:boolean;
+    error:boolean;
+    errmsg:string;
+    successMsg:string;
+    user?:userType[];
+}
