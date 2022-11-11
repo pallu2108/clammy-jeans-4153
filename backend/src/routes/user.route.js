@@ -47,7 +47,7 @@ userRoutes.post("/login",async(req,res)=>{
             })
 
         }else{
-            res.send({"Error":"Something Error"})
+            res.status(400).send({"Error":"Something Error"})
         }
     })
 })

@@ -19,12 +19,11 @@ adminRoutes.post("/", async (req, res) => {
           token,
         });
       } else {
-        res.send("Something went wrong");
+        res.status(400).send({ Error: "Something Error" });
       }
     });
-  }
-  else{
-    res.send("Not authorized. Contact Admin")
+  } else {
+    res.status(400).send("Not authorized. Contact Admin");
   }
 });
 
