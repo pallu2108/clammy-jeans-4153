@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "../features/hooks";
 import { Box, Heading } from "@chakra-ui/react";
 import ProjectCard from "./ProjectCard";
 
-const Products = () => {
+const ProductsComponent = () => {
   const dispatch = useAppDispatch();
   const products = useAppSelector((store) => store.productSlice);
   console.log(products);
@@ -31,4 +31,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default ProductsComponent;

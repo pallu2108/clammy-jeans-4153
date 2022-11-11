@@ -1,3 +1,20 @@
+export type authStateSliceType = {
+    loading: boolean;
+    error: boolean;
+    token: string;
+    isAuth: boolean
+}
+
+export type authActionpropType = {
+    type: string;
+    payload: {status: string, token: string, username: string, email: string, password: string, message:string}
+}
+
+export type authResType = {
+    token: string;
+    status: string
+}
+
 export type productType = {
   _id?: string;
   id: number;
