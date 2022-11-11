@@ -47,11 +47,21 @@ const authSlice = createSlice({
             state.loading = false,
             state.isAuth = true,
             state.error = false,
-            
+            state.token = action.payload.token,
+            localStorage.setItem("token", action.payload.token)
+        })
+        .addCase(login.rejected, (state, action:PayloadAction<any>)=>{
+            state.loading = false,
+            state.isAuth = false,
+            state.error = true
         })
     }
 })
 
+console.log(authSlice)
 
+export const {logout} = authSlice.actions;
+
+export default authSlice.reducer;
 
 

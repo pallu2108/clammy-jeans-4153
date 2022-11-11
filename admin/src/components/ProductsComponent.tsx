@@ -20,7 +20,7 @@ const ProductsComponent = () => {
       <Heading>Products</Heading>
       <Box>
         {products.products.map((product) => (
-            <Box>
+            <Box key={product._id}>
                 <ProjectCard title={product.title} image={product.images[0]} brand={product.brand} />
             </Box>
         )
