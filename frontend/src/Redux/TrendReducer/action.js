@@ -9,7 +9,7 @@ const getTrendRecordRequest=()=>{
 
 const getTrendRecord=(params)=>(dispatch)=>{
     dispatch(getTrendRecordRequest())
-    return axios.get("http://localhost:8080/flash",params)
+    return axios.get("https://truebuy.onrender.com/products",params)
     .then((r)=>{
         return dispatch({type:types.GET_TREND_RECORD_SUCCESS,payload:r.data})
     }).catch((e)=>{
