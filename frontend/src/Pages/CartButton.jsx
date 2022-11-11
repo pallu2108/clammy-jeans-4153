@@ -49,7 +49,7 @@ const CartButton = () => {
                 <Box>
                     
                     <Box>
-                    <Image w="80px" h="70px" src='https://bit.ly/dan-abramov' alt='Dan Abramov' />
+                    <Image w="80px" h="70px" src='https://bit.ly/dan-abramov' alt='product' />
                     </Box>
                     <Box>
                         <Text w="120px" color={"orange.300"}  fontWeight={"bold"}>Delivery: December 8, 2022</Text>
