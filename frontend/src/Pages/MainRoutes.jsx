@@ -7,6 +7,7 @@ import BestDeals from './BestDeals';
 import CartButton from './CartButton';
 import Category from './Category';
 import Checkout from './Checkout';
+import Editcart from './Editcart';
 
 import FlashRecords from './FlashRecords';
 import New from './New';
@@ -30,6 +31,7 @@ const MainRoutes = () => {
         ></Route>
         <Route path="/checkout" element={<Checkout />}></Route>
         <Route path='/category' element={<Category/>}> </Route>
+        <Route path="/editcart" element={<Editcart/>}></Route>
       </Routes>
 
       <Footer />
