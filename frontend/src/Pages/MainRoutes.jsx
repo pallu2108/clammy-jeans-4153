@@ -17,6 +17,7 @@ import Modala from './Modal';
 import Modal from './Modal';
 import New from './New';
 import ShopByBrands from './ShopByBrands';
+import Signup from './Signup';
 import SinglePage from './SinglePage';
 import Success from './Success';
 import Trend from './Trend';
@@ -43,6 +44,7 @@ const MainRoutes = () => {
         <Route path="/success" element={<Success/>} ></Route>
         <Route path="/single/:id" element={<SinglePage/>} ></Route>
         <Route path="/login" element={<Login/>} ></Route>
+        <Route path="/signup" element={<Signup/>}  ></Route>
       </Routes>
 
       <Footer />
