@@ -4,7 +4,7 @@ import './App.css'
 import MainRoute from './Routes/MainRoute'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <div className="App">
