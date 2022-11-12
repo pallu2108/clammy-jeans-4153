@@ -45,6 +45,7 @@ export type productSliceType = {
 };
 
 export type userType = {
+    _id: string;
     email:string;
     password:string;
     role:string
@@ -55,5 +56,5 @@ export type userSliceType = {
     error:boolean;
     errmsg:string;
     successMsg:string;
-    user?:userType[];
+    users:userType[];
 }

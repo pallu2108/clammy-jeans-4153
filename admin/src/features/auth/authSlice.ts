@@ -3,7 +3,7 @@ import axios from "axios";
 
 import {authStateSliceType, authResType} from "../types/types"
 
-const DBLINK = "http://localhost:8080";
+const DBLINK = "https://truebuy.onrender.com";
 
 //login action
 export const login = createAsyncThunk(
