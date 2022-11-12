@@ -5,6 +5,7 @@ import FlashFilter from '../Components/FlashFilter';
 import { getFlashRecord } from '../Redux/FlashReducer/action';
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { Box, Flex,Text, Spacer } from '@chakra-ui/react'
+import { Link } from 'react-router-dom';
 
 
 const FlashRecords = () => {
@@ -35,10 +36,11 @@ const FlashRecords = () => {
       <Box style={{display:"grid",gridTemplateColumns:"repeat(4,300px)",gap:"15px"}}>
         
         {flashRecords.length>0 && flashRecords.map((ele)=>{
-          return <Box key={ele.id}  >
+          return <Box key={ele._id}  >
             <div>
-
+             <Link to={`/single/${ele._id}`}>
             <img src={ele.images[0]}></img>
+             </Link>
             </div>
             <Box><Text fontSize={"sm"} textAlign="left">{ele.title
 }</Text></Box>

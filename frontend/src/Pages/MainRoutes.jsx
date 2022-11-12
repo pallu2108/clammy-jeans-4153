@@ -12,10 +12,12 @@ import Editcart from './Editcart';
 
 
 import FlashRecords from './FlashRecords';
+import Login from './Login';
 import Modala from './Modal';
 import Modal from './Modal';
 import New from './New';
 import ShopByBrands from './ShopByBrands';
+import SinglePage from './SinglePage';
 import Success from './Success';
 import Trend from './Trend';
 
@@ -39,6 +41,8 @@ const MainRoutes = () => {
         <Route path="/editcart" element={<Editcart/>}></Route>
         <Route path='/modal' element={<Modala/>}> </Route>
         <Route path="/success" element={<Success/>} ></Route>
+        <Route path="/single/:id" element={<SinglePage/>} ></Route>
+        <Route path="/login" element={<Login/>} ></Route>
       </Routes>
 
       <Footer />
