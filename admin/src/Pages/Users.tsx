@@ -3,7 +3,7 @@ import { getUsers } from "../features/users/userSlice";
 import { useAppDispatch, useAppSelector } from "../features/hooks";
 import { Box, Flex, Heading, Image } from "@chakra-ui/react";
 import loader from "../assets/loader.gif";
-import { NavBar } from "../components/navbar/NavBar";
+// import { NavBar } from "../components/navbar/NavBar";
 
 const Users = () => {
   const dispatch = useAppDispatch();
@@ -16,7 +16,7 @@ const Users = () => {
   }, []);
   return (
     <Box>
-      <NavBar />
+      {/* <NavBar /> */}
       <Heading>Users</Heading>
       <Box>
         {users.users.map((user) => (

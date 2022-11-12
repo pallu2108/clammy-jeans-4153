@@ -20,7 +20,7 @@ import {
   StackDivider,
   Text,
 } from "@chakra-ui/react";
-import { NavBar } from "../components/navbar/NavBar";
+// import { NavBar } from "../components/navbar/NavBar";
 
 type credsProp = {
   email: string;
@@ -70,7 +70,7 @@ const Login = () => {
 
   return (
     <Box>
-      <NavBar />
+      {/* <NavBar /> */}
       <form onSubmit={handleSubmit}>
         <FormLabel>Log In</FormLabel>
         <Stack direction="column">
