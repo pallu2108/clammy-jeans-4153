@@ -9,10 +9,6 @@ const ProductsComponent = () => {
   const dispatch = useAppDispatch();
   const products = useAppSelector((store) => store.productSlice);
   console.log(products);
-  //   const auth = useAppSelector((store) => store.authSlice);
-  //   const [client, setClient] = useState<string>("");
-  //   const [userId, email, password] = auth.token.split(":");
-  //   const [clientId, setClientId] = useState<string>("");
   useEffect(() => {
     dispatch(getProducts());
   }, []);

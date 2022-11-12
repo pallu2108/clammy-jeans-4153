@@ -2,30 +2,34 @@ import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import type { userType, userSliceType } from "../types/types";
 import axios, { AxiosResponse } from "axios";
 
-const DBLINK = "http://localhost:8080";
+const DBLINK = "https://truebuy.onrender.com";
 
-export const getUsers = createAsyncThunk(
-  "users/getUsers",
-  async (thunkApi) => {
-    try {
-      const res = await axios.get<userType>(`${DBLINK}/user`);
-      console.log(res.data);
-      return res.data;
-    } catch (error: any) {
-      return thunkApi.rejectWithValue(error.message);
-    }
+export const getUsers = createAsyncThunk("users/getUsers", async ( data: {token:string}, thunkApi) => {
+  try {
+    const res :AxiosResponse<userType> = await axios({
+      method: "GET",
+      url: `${DBLINK}/user`,
+      headers: {
+        Authorization: `Bearer ${data.token}`
+      }
+    });
+    console.log(res.data);
+    return res.data;
+  } catch (error: any) {
+    return thunkApi.rejectWithValue(error.message);
   }
-);
+});
 
 const initialState: userSliceType = {
   loading: false,
   error: false,
   errmsg: "",
-  successMsg:"",
+  successMsg: "",
   users: [],
 };
 
 const user: userType = {
+  _id: "",
   email: "",
   password: "",
   role: "",
@@ -36,8 +40,7 @@ const userSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers(builder) {
-    builder
-      .addCase(getUsers.pending, (state, action) => {
+    builder.addCase(getUsers.pending, (state, action) => {
         state.loading = true;
       })
       .addCase(
@@ -45,7 +48,7 @@ const userSlice = createSlice({
         (state, action: PayloadAction<userType[]>) => {
           (state.loading = false),
             (state.error = false),
-            (state.products = action.payload);
+            (state.users = action.payload);
         }
       )
       .addCase(getUsers.rejected, (state, action: PayloadAction<any>) => {
