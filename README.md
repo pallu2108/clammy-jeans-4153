@@ -1,4 +1,5 @@
-## _TrueBuy(Group Project)
+# <img src="https://i.imgur.com/nuBWdre.png" width="8%"/> **TrueBuy** _(Group Project)_
+
 
 Project:  [TrueBuy](https://truebuy.netlify.app/) site.
 
