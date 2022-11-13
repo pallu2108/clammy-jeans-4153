@@ -1,17 +1,20 @@
 import React from 'react'
 import { Box, Flex,Text,Image , Input, Button} from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
+import Navbar from '../Components/Navbar/Navbar'
+import Footer from '../Components/Footer/Footer'
 const arr=[{
-  "image": "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjMxMjczXC9ZZWxsb3dfbl8xXzEuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjozMjAsImhlaWdodCI6MzIwLCJmaXQiOiJjb250YWluIiwiYmFja2dyb3VuZCI6eyJyIjoyNTUsImciOjI1NSwiYiI6MjU1LCJhbHBoYSI6MX19fX0=",
-  "name": "Remote Controlled Monster Drift Toy",
-  "rating": "3.8/5",
-  "price": 3499,
+  "image": "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjMyMTMxXC9QaW5rX25fMV8xLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTAwMCwiaGVpZ2h0IjoxMDAwLCJmaXQiOiJjb250YWluIiwiYmFja2dyb3VuZCI6eyJyIjoyNTUsImciOjI1NSwiYiI6MjU1LCJhbHBoYSI6MX19fX0=",
+  "name": "Car LED Makeup Mirror",
+  "rating": "5/5",
+  "price": 2199,
   "para": "Free Shipping"
 }]
 
 const Editcart = () => {
   return (
-    <div>
+    <Box>
+      <Navbar />
      <Box pl="100px" pr="100px">
         <Flex gap="20px">
           {/* box1  */}
@@ -33,15 +36,15 @@ const Editcart = () => {
                        <Box><Image pl="30px" w="150px" h="150px" src={ele.image}></Image></Box>
                        <Box w="300px" >
                          <Box textAlign={"left"}>
-                            <Text fontSize={"md"} mt="5px" fontWeight="bold">MENS CASUAL BUSSINESS WATCH</Text>
+                            <Text fontSize={"md"} mt="5px" fontWeight="bold">Car LED Makeup Mirror</Text>
                             <br />
-                            <Text pl="10px" fontSize={"xs"} >COLOR : BEIGE</Text>
+                            <Text pl="10px" fontSize={"xs"} >COLOR : White</Text>
                             <Flex>
                               <Box pl="10px">
 
                             <Text fontSize={"xs"} pt="5px" >Select QTY :</Text>
                               </Box>
-                               <Box pl="10px" pt="2px"><Input h="25px" w="10px" placeholder='1'/></Box>
+                               <Box pl="10px" pt="2px">1</Box>
                             </Flex>
                          </Box>
                          <Box pt="4px">
@@ -61,7 +64,7 @@ const Editcart = () => {
                        </Box>
                        <Box pl="60px" pt="40px"> <Text as="del"> Rs 9,999.00</Text></Box>
                        <Box pl="10px" pt="40px"> <Text>
-                        RS 3,299.00
+                        RS 2,199.00
                         </Text></Box>
                      </Flex>
                  )
@@ -71,7 +74,7 @@ const Editcart = () => {
             </Box>
 
             {/* Box 2 */}
-            <Box w="280px" mt="20px" h="300px" border={"1px solid rgb(205,205,205)"}>
+            <Box w="280px" mt="20px" h="350px" border={"1px solid rgb(205,205,205)"}>
             <Box bg="#f2f2f2" h="80px">
             <Box pt="20px" ><Text fontsize={"sm"} fontWeight={"bold"} color={"gray"} >Checkout Details</Text></Box>
             </Box>
@@ -80,11 +83,11 @@ const Editcart = () => {
               <Flex>
                
                 <Box>
-                <Text color={"gray"} textAlign={"left"} pl="10px" fontWeight="bold" fontSize="md">Total Items: 2</Text>
+                <Text color={"gray"} textAlign={"left"} pl="10px" fontWeight="bold" fontSize="md">Total Items: 1</Text>
                 <Flex>
                   <Box><Text color={"gray"} textAlign={"left"} pl="10px" fontWeight="bold" fontSize="md">Sub Total : </Text></Box>
 
-                  <Box><Text color={"blue"} textAlign={"left"} pl="10px" fontWeight="bold" fontSize="md">Rs 6,598.00 </Text> </Box>
+                  <Box><Text color={"blue"} textAlign={"left"} pl="10px" fontWeight="bold" fontSize="md">Rs 2,199.00 </Text> </Box>
                 </Flex>
                 
                 <Text color={"green"} textAlign={"left"} pl="10px" fontWeight="bold" fontSize="md">Shipping : Free</Text>
@@ -95,7 +98,7 @@ const Editcart = () => {
               </Box>
               <br />
               <Text  color={"gray"} textAlign={"left"} pl="10px" fontWeight="bold" fontSize="md">Or 3 interest free payments of</Text>
-              <Text  color={"black"} textAlign={"left"} pl="10px" fontWeight="bold" fontSize="md">Rs 2199.34 </Text>
+              <Text mb={"10px"}  color={"black"} textAlign={"left"} pl="10px" fontWeight="bold" fontSize="md">Rs 733.00 </Text>
               
                           
                          </Box>
@@ -109,7 +112,8 @@ const Editcart = () => {
         </Flex>
 
      </Box>
-    </div>
+     <Footer />
+    </Box>
   )
 }
 

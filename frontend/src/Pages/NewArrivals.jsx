@@ -12,14 +12,17 @@ import HomePagemid from "../Components/HomePage/HomePagemid";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
 
-const BestDeals = () => {
+const NewArrivals = () => {
   const dispatch = useAppDispatch();
   const products = useAppSelector((store) => store.productSlice);
-  const flash = products.products.filter(
-    (product) =>
-      product.category == "WOMEN" || product.category == "Electonics"
+  const new1 = products.products.filter(
+    (product) => product.category == "Electonics"
   );
-  console.log(flash);
+  const new2 = products.products.filter(
+    (product) => product.category == "MEN"
+  );
+  const newA = new1.concat(new2)
+  console.log(newA);
   useEffect(() => {
     dispatch(getProducts());
   }, []);
@@ -46,8 +49,8 @@ const BestDeals = () => {
         <Box mt="10px"><span> Home </span><ChevronRightIcon/><span> Flash sale </span><ChevronRightIcon/><span> Flash span </span></Box>
         </Box> */}
             <Wrap spacing="100px">
-              {flash.length > 0 &&
-                flash.map((ele) => {
+              {newA.length > 0 &&
+                newA.map((ele) => {
                   return <HomePagemid key={ele._id} {...ele} />;
                 })}
             </Wrap>
@@ -59,4 +62,4 @@ const BestDeals = () => {
   );
 };
 
-export default BestDeals;
+export default NewArrivals;
