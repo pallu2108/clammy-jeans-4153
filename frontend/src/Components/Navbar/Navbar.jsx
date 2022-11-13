@@ -1,8 +1,8 @@
-import './Navbar.css';
-import img_1 from '../../Images/img_1.png';
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ChevronDownIcon } from '@chakra-ui/icons';
+import "./Navbar.css";
+import truelogo from "../../Images/truelogo.png";
+import React from "react";
+import { Link } from "react-router-dom";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 import {
   Drawer,
   DrawerBody,
@@ -19,61 +19,89 @@ import {
   Image,
   MenuButton,
   Menu,
-} from '@chakra-ui/react';
-import { MenuList, MenuItem, Heading } from '@chakra-ui/react';
+  Input,
+  Center,
+} from "@chakra-ui/react";
+import { MenuList, MenuItem, Heading } from "@chakra-ui/react";
+import { BsFillCartFill } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
 
 const Drop = () => {
   return (
     <>
       <MenuList pl="10px">
-        <Flex fontSize={'sm'} w="100%" gap="5px">
+        <Flex fontSize={"sm"} w="100%" gap="5px">
           <Box>
-            <Heading as={'h4'} size={'sm'} _hover={{textDecoration:"underline"}}>
+            <Heading
+              as={"h4"}
+              size={"sm"}
+              _hover={{ textDecoration: "underline" }}
+            >
               MEN
             </Heading>
 
-            <MenuItem>Watches</MenuItem>
+            <MenuItem><Link to={"/men/watches"}>Watches</Link></MenuItem>
 
-            <Heading as={'h4'} mt="40px" size={'sm'} _hover={{textDecoration:"underline"}}>
+            <Heading
+              as={"h4"}
+              mt="40px"
+              size={"sm"}
+              _hover={{ textDecoration: "underline" }}
+            >
               WOMEN
             </Heading>
-            <MenuItem w="190px">Makeup Accessories</MenuItem>
+            <MenuItem w="190px"><Link to={"/women/makeup"}>Makeup Accessories</Link></MenuItem>
             <MenuItem>Clothing</MenuItem>
             <MenuItem>handbags & Clutches</MenuItem>
             <MenuItem>Watches</MenuItem>
             <MenuItem>Ballet Flats</MenuItem>
             <MenuItem>Sandals</MenuItem>
-            
           </Box>
           <Box w="170px">
-            <Heading as={'h4'} size={'sm'} _hover={{textDecoration:"underline"}}>
+            <Heading
+              as={"h4"}
+              size={"sm"}
+              _hover={{ textDecoration: "underline" }}
+            >
               ELECTRONICS
             </Heading>
-            <MenuItem >Gaming Accessories</MenuItem>
+            <MenuItem>Gaming Accessories</MenuItem>
             <MenuItem>Keyboards & Mouse</MenuItem>
             <MenuItem>Small Appliances</MenuItem>
-            </Box>
+          </Box>
 
-            <Box w="170px">
-            <Heading as={'h4'} size={'sm'} _hover={{textDecoration:"underline"}}>
+          <Box w="170px">
+            <Heading
+              as={"h4"}
+              size={"sm"}
+              _hover={{ textDecoration: "underline" }}
+            >
               ESSENTIALS
             </Heading>
-            <MenuItem >Home Essential</MenuItem>
+            <MenuItem>Home Essential</MenuItem>
             <MenuItem>Men's Essentials</MenuItem>
             <MenuItem>School Backpacks</MenuItem>
-            <MenuItem >Sport Essential</MenuItem>
+            <MenuItem>Sport Essential</MenuItem>
             <MenuItem>Women Essentials</MenuItem>
-             </Box>
+          </Box>
 
-            <Box w="170px">
-            <Heading as={'h4'} size={'sm'} _hover={{textDecoration:"underline"}}>
+          <Box w="170px">
+            <Heading
+              as={"h4"}
+              size={"sm"}
+              _hover={{ textDecoration: "underline" }}
+            >
               FLASH SALE
             </Heading>
             <MenuItem>Flash Sale</MenuItem>
-          </Box>  
+          </Box>
 
           <Box w="170px">
-            <Heading as={'h4'} size={'sm'} _hover={{textDecoration:"underline"}}>
+            <Heading
+              as={"h4"}
+              size={"sm"}
+              _hover={{ textDecoration: "underline" }}
+            >
               HOME & LIVING
             </Heading>
             <MenuItem>Bath & Storage</MenuItem>
@@ -82,11 +110,14 @@ const Drop = () => {
             <MenuItem>Home Improvement</MenuItem>
             <MenuItem>Kitchen Wares</MenuItem>
             <MenuItem>Nordic Ceilingh Lights</MenuItem>
-            
           </Box>
-          
-            <Box w="170px">
-            <Heading as={'h4'} size={'sm'}  _hover={{textDecoration:"underline"}}>
+
+          <Box w="170px">
+            <Heading
+              as={"h4"}
+              size={"sm"}
+              _hover={{ textDecoration: "underline" }}
+            >
               KIDS & MOMS
             </Heading>
             <MenuItem>Action Figures</MenuItem>
@@ -96,8 +127,12 @@ const Drop = () => {
             <MenuItem>Marvel</MenuItem>
             <MenuItem>Toys</MenuItem>
           </Box>
-          <Box w="170px" >  
-            <Heading as={'h4'} size={'sm'} _hover={{textDecoration:"underline"}}>
+          <Box w="170px">
+            <Heading
+              as={"h4"}
+              size={"sm"}
+              _hover={{ textDecoration: "underline" }}
+            >
               MEANBUY DEALS
             </Heading>
             <MenuItem>Gifts</MenuItem>
@@ -109,7 +144,11 @@ const Drop = () => {
           </Box>
 
           <Box w="170px">
-            <Heading as={'h4'} size={'sm'} _hover={{textDecoration:"underline"}}>
+            <Heading
+              as={"h4"}
+              size={"sm"}
+              _hover={{ textDecoration: "underline" }}
+            >
               MOBILE & TABS
             </Heading>
             <MenuItem>Blutooth Earphone</MenuItem>
@@ -119,8 +158,6 @@ const Drop = () => {
             <MenuItem>Wireless Chargers</MenuItem>
             <MenuItem>Wireless Speakers</MenuItem>
           </Box>
-          
-       
         </Flex>
       </MenuList>
     </>
@@ -134,132 +171,122 @@ export default function Navbar() {
   //   alert('hello ajay');
   // };
   return (
-    <div className="div">
-      <div className="maindiv">
-        <div className="firstnavdiv">
-          <a href="/">
-            <img className="img_1" src={img_1} alt="" />
-          </a>
-          <input type="text" placeholder="Search.." />
-          <button>
-            <img
-              className="img_2sdf"
-              src="https://cdn-icons-png.flaticon.com/128/2811/2811790.png"
-              alt=""
-            />
-          </button>
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            marginTop: '20px',
-            marginLeft: '300px',
-          }}
-        >
-          <p className="ptagdub">
-            Seller's Corner | Feedback | Blog | Delivery Info
-          </p>
-          <div style={{ marginLeft: '30px' }}>
-            <div style={{ display: 'flex' }}>
-              <a href="">Login</a>&ensp;/&ensp;<a href="">SignUp</a>
-            </div>
-            <div style={{ fontWeight: 'bolder' }}>Welcome Guest</div>
-          </div>
-        </div>
-        <Button
-          style={{ marginTop: '30px', background: 'white' }}
-          ref={btnRef}
-          bg="transparent"
-          onClick={onOpen}
-        >
-          <img
-            style={{
-              width: '45px',
-              marginLeft: '20px',
-              height: '45px',
-            }}
-            src="https://cdn-icons-png.flaticon.com/128/1972/1972372.png"
-            alt=""
-          />
-        </Button>
-        <Drawer
-          isOpen={isOpen}
-          placement="right"
-          onClose={onClose}
-          finalFocusRef={btnRef}
-        >
-          <DrawerOverlay />
-          <DrawerContent>
-            <DrawerCloseButton />
-            {/* <DrawerHeader> */}
-            <br></br>
-            <Flex mt="20px" mb="10px" pl="25px" pr="25px">
-              <Box>
-                <Text>VIEW CART</Text>
-              </Box>
-              <Spacer />
-              <Box>
-                <Text>CART TOTAL</Text>
-              </Box>
+    <Box>
+      <Box mb={"15px"}>
+        <Flex>
+          <Flex>
+            <Link to="/">
+              <Image width={"150px"} src={truelogo} alt="" />
+            </Link>
+            <Flex ml={"30px"}>
+              <Center>
+                <Box>
+                  <Input width={"300px"} type="text" placeholder="Search.." />
+                </Box>
+                <Center pl={"10px"}>
+                  <BsSearch fontSize={"20px"} />
+                </Center>
+              </Center>
             </Flex>
-            {/* </DrawerHeader> */}
-            <Box>
-              <Button w="50%" bg="black" color={'white'}>
-                <Link to="/editcart" >
-                <Text fontSize="md">EDIT CART</Text>
-                </Link>
-              </Button>
-              <Button w="50%" bg={'white'}>
-                <Link to="/checkout">
-                  <Text fontSize="md">CHECKOUT CART</Text>
-                </Link>
-              </Button>
+          </Flex>
+          <Spacer />
+          <Flex>
+            <Center pr={"30px"}>
+              <Text fontSize={"12px"}>
+                Seller's Corner | Feedback | Blog | Delivery Info
+              </Text>
+            </Center>
+            <Box pr={"20px"}>
+              <Flex>
+                <Link to="/login">Login</Link>
+                <Box p={"0px 2px"}>/</Box>
+                <Link to="/signup">SignUp</Link>
+              </Flex>
+              <Box>Welcome Guest</Box>
             </Box>
-
-            <DrawerBody>
+            <Flex mt={"10px"} onClick={onOpen}>
+              <BsFillCartFill color="orange" fontSize={"24px"} />
+              {/* <Text mt={"-5px"}>0</Text> */}
+            </Flex>
+          </Flex>
+          <Drawer
+            isOpen={isOpen}
+            placement="right"
+            onClose={onClose}
+            finalFocusRef={btnRef}
+          >
+            <DrawerOverlay />
+            <DrawerContent>
+              <DrawerCloseButton />
+              {/* <DrawerHeader> */}
+              <br></br>
+              <Flex mt="20px" mb="10px" pl="25px" pr="25px">
+                <Box>
+                  <Text>VIEW CART</Text>
+                </Box>
+                <Spacer />
+                <Box>
+                  <Text>CART TOTAL</Text>
+                </Box>
+              </Flex>
+              {/* </DrawerHeader> */}
               <Box>
-                <Flex mt="50px">
-                  <Box>
+                <Button w="50%" bg="black" color={"white"}>
+                  <Link to="/editcart">
+                    <Text fontSize="md">EDIT CART</Text>
+                  </Link>
+                </Button>
+                <Button w="50%" bg={"white"}>
+                  <Link to="/checkout">
+                    <Text fontSize="md">CHECKOUT CART</Text>
+                  </Link>
+                </Button>
+              </Box>
+
+              <DrawerBody>
+                <Box>
+                  <Flex mt="50px">
                     <Box>
-                      <Image
-                        w="80px"
-                        h="70px"
-                        src="https://bit.ly/dan-abramov"
-                        alt="product"
-                      />
+                      <Box>
+                        <Image
+                          w="80px"
+                          h="70px"
+                          src="https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjMyMTMxXC9QaW5rX25fMV8xLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTAwMCwiaGVpZ2h0IjoxMDAwLCJmaXQiOiJjb250YWluIiwiYmFja2dyb3VuZCI6eyJyIjoyNTUsImciOjI1NSwiYiI6MjU1LCJhbHBoYSI6MX19fX0="
+                          alt="product"
+                        />
+                      </Box>
+                      <Box>
+                        <Text
+                          w="120px"
+                          color={"orange.300"}
+                          fontWeight={"bold"}
+                        >
+                          Delivery: December 8, 2022
+                        </Text>
+                      </Box>
                     </Box>
                     <Box>
-                      <Text
-                        w="120px"
-                        color={'orange.300'}
-                        fontWeight={'bold'}
-                      >
-                        Delivery: December 8, 2022
+                      <Text fontWeight={"bold"} fontSize="xs">
+                        Car LED Makeup Mirror
+                      </Text>
+                      <Text mt="30px" color={"gray"} fontSize="sm">
+                        COLOR: White
+                      </Text>
+                      <Text color={"gray"} as="del" fontSize="sm">
+                        Price: 9,999
+                      </Text>
+                      <Text color={"gray"} fontSize="sm">
+                        Your Price: 2,199.00
                       </Text>
                     </Box>
-                  </Box>
-                  <Box>
-                    <Text fontWeight={'bold'} fontSize="xs">
-                      1 * Mens Casual Business watch
-                    </Text>
-                    <Text mt="30px" color={'gray'} fontSize="sm">
-                      COLOR: BEIGE
-                    </Text>
-                    <Text color={'gray'} as="del" fontSize="sm">
-                      Price: 9,999
-                    </Text>
-                    <Text color={'gray'} fontSize="sm">
-                      Your Price: 2,299.00
-                    </Text>
-                  </Box>
-                </Flex>
-              </Box>
-            </DrawerBody>
+                  </Flex>
+                </Box>
+              </DrawerBody>
 
-            <DrawerFooter></DrawerFooter>
-          </DrawerContent>
-        </Drawer>
-        {/* <button onClick={handlechange}>
+              <DrawerFooter></DrawerFooter>
+            </DrawerContent>
+          </Drawer>
+          {/* <button onClick={handlechange}>
           <img
             style={{
               marginTop: '20px',
@@ -271,16 +298,12 @@ export default function Navbar() {
             alt=""
           />
         </button> */}
-      </div>
-      <Flex
-        style={{
-          textAlign: 'left',
-          borderBottom: '3px solid #e1e1e1',
-        }}
-      >
-        <Box className="adub" href="">
+        </Flex>
+      </Box>
+      <Flex mb={"20px"}>
+        <Box>
           <Menu>
-            <MenuButton bg={'none'} m={0}>
+            <MenuButton bg={"none"} m={0}>
               Categories
               <ChevronDownIcon />
             </MenuButton>
@@ -289,23 +312,23 @@ export default function Navbar() {
           {/* Categories */}
         </Box>
         <Box>
-          <a className="adub" href="/flash">
+          <Link className="adub" to="/flash">
             Flash Sale
-          </a>
+          </Link>
         </Box>
-        <a className="adub" href="/bestdeals">
+        <Link className="adub" to="/bestdeals">
           Best Deals
-        </a>
-        <a className="adub" href="/shopbybrands">
+        </Link>
+        <Link className="adub" to="/shopbybrands">
           Shop by Brand
-        </a>
-        <a className="adub" href="/trend">
+        </Link>
+        <Link className="adub" to="/trending">
           Trending
-        </a>
-        <a className="adub" href="/new">
+        </Link>
+        <Link className="adub" to="/newArrivals">
           New Arrivals
-        </a>
+        </Link>
       </Flex>
-    </div>
+    </Box>
   );
 }

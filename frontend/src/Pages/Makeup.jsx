@@ -12,14 +12,13 @@ import HomePagemid from "../Components/HomePage/HomePagemid";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
 
-const BestDeals = () => {
+const Makeup = () => {
   const dispatch = useAppDispatch();
   const products = useAppSelector((store) => store.productSlice);
-  const flash = products.products.filter(
+  const makeup = products.products.filter(
     (product) =>
-      product.category == "WOMEN" || product.category == "Electonics"
+      product.subcategory == "Makeup Accessories"
   );
-  console.log(flash);
   useEffect(() => {
     dispatch(getProducts());
   }, []);
@@ -46,8 +45,8 @@ const BestDeals = () => {
         <Box mt="10px"><span> Home </span><ChevronRightIcon/><span> Flash sale </span><ChevronRightIcon/><span> Flash span </span></Box>
         </Box> */}
             <Wrap spacing="100px">
-              {flash.length > 0 &&
-                flash.map((ele) => {
+              {makeup.length > 0 &&
+                makeup.map((ele) => {
                   return <HomePagemid key={ele._id} {...ele} />;
                 })}
             </Wrap>
@@ -59,4 +58,4 @@ const BestDeals = () => {
   );
 };
 
-export default BestDeals;
+export default Makeup;

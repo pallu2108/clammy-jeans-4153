@@ -9,7 +9,7 @@ const getBestRecordRequest=()=>{
 
 const getBestRecord=(params)=>(dispatch)=>{
     dispatch(getBestRecordRequest())
-    return axios.get("https://truebuy.onrender.com/products",params)
+    return axios.get("http://localhost:8080/flash",params)
     .then((r)=>{
         return dispatch({type:types.GET_BEST_RECORD_SUCCESS,payload:r.data})
     }).catch((e)=>{
