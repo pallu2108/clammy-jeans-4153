@@ -8,9 +8,7 @@ export const getProducts = createAsyncThunk(
   "products/getProducts",
   async (thunkApi) => {
     try {
-      const res = await axios.get<productType>(
-        `${DBLINK}/products`
-      );
+      const res = await axios.get<productType>(`${DBLINK}/products`);
       console.log(res.data);
       return res.data;
     } catch (error: any) {
@@ -69,7 +67,7 @@ const productSlice = createSlice({
         (state.error = true),
           (state.loading = false),
           (state.errmsg = action.payload);
-      })
+      });
   },
 });
 
