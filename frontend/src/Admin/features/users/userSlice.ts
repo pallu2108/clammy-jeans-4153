@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import type { userType, userSliceType } from "../types/types";
 import axios, { AxiosResponse } from "axios";
 
-const DBLINK = "http://localhost:8080";
+const DBLINK = "https://truebuy.onrender.com";
 
 export const getUsers = createAsyncThunk("users/getUsers", async ( data: {token:string}, thunkApi) => {
   try {

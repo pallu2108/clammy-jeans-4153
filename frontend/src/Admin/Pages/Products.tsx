@@ -1,11 +1,14 @@
+import { Box } from "@chakra-ui/react";
 import React from "react";
+import Navbar from "../components/Navbar";
 import ProductsComponent from "../components/ProductsComponent";
 
 const AdminProducts = () => {
   return (
-    <div>
+    <Box>
+      <Navbar />
       <ProductsComponent />
-    </div>
+    </Box>
   );
 };
 

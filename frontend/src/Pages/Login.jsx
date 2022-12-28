@@ -91,6 +91,7 @@ const Login = () => {
                   Password
                 </Text>
                 <Input
+                type='password'
                   mt="4px"
                   maxW="xl"
                   ml="20px"
@@ -149,7 +150,7 @@ const Login = () => {
                       fontWeight="bold"
                       fontSize="md"
                     >
-                      Total Items: 2
+                      Total Items: 1
                     </Text>
                     <Flex>
                       <Box>
@@ -172,7 +173,7 @@ const Login = () => {
                           fontWeight="bold"
                           fontSize="md"
                         >
-                          Rs 6,598.00{" "}
+                          Rs 2,199.00{" "}
                         </Text>{" "}
                       </Box>
                     </Flex>
@@ -209,7 +210,7 @@ const Login = () => {
                     fontWeight="bold"
                     fontSize="md"
                   >
-                    Rs 2199.34{" "}
+                    Rs 2,199{" "}
                   </Text>
                 </Flex>
               </Box>
