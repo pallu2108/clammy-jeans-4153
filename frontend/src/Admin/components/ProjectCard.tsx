@@ -3,7 +3,7 @@ import React from 'react'
 
 const ProjectCard = ({title, image, brand, onClick}:{title: string, image: string, brand: string, onClick?: React.MouseEventHandler<HTMLButtonElement>} ) => {
   return (
-    <Box bg={"yellow"} maxW='7xl'>
+    <Box bg={"yellow"} maxW='7xl' mb={"20px"}>
         <Flex>
             <Box>
                 <Image boxSize={"50px"} src={image} />

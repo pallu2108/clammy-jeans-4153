@@ -35,10 +35,10 @@ const Signup = () => {
 
   const alert = () => (
     <Alert status="success">
-        <AlertIcon />
-        Data uploaded to the server. Fire on!
-      </Alert>
-  )
+      <AlertIcon />
+      Data uploaded to the server. Fire on!
+    </Alert>
+  );
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -65,59 +65,61 @@ const Signup = () => {
           </Box>
 
           <Box maxW={"2xl"}>
-                <Text pl="20px" fontSize={"sm"} mt="70px" textAlign="left">
-                  Enter Address
-                </Text>
-                <Input
-                  mt="4px"
-                  maxW="xl"
-                  ml="20px"
-                  mr="100px"
-                  placeholder="Email Address"
-                  onChange={()=>setEmail(e.target.value)}
-                />
-              </Box>
+            <Text pl="20px" fontSize={"sm"} mt="70px" textAlign="left">
+              Enter Address
+            </Text>
+            <Input
+              mt="4px"
+              maxW="xl"
+              ml="20px"
+              mr="100px"
+              placeholder="Email Address"
+              onChange={() => setEmail(e.target.value)}
+            />
+          </Box>
 
-              <Box mt="20px" maxW={"2xl"}>
-                <Text pl="20px" fontSize={"sm"} textAlign="left">
-                  Password
-                </Text>
-                <Input
-                  mt="4px"
-                  maxW="xl"
-                  ml="20px"
-                  mr="100px"
-                  placeholder="Enter Password"
-                  onChange={()=>setPassword(e.target.value)}
-                />
-              </Box>
+          <Box mt="20px" maxW={"2xl"}>
+            <Text pl="20px" fontSize={"sm"} textAlign="left">
+              Password
+            </Text>
+            <Input
+              type="password"
+              mt="4px"
+              maxW="xl"
+              ml="20px"
+              mr="100px"
+              placeholder="Enter Password"
+              onChange={() => setPassword(e.target.value)}
+            />
+          </Box>
 
-              <Box mt="20px" maxW={"2xl"}>
-                <Text pl="20px" fontSize={"sm"} textAlign="left">
-                  Password
-                </Text>
-                <Input
-                  mt="4px"
-                  maxW="xl"
-                  ml="20px"
-                  mr="100px"
-                  placeholder="Confirm Password"
-                  // onChange={()=>setPassword(e.target.value)}
-                />
-              </Box>
+          <Box mt="20px" maxW={"2xl"}>
+            <Text pl="20px" fontSize={"sm"} textAlign="left">
+              Password
+            </Text>
+            <Input
+              type="password"
+              mt="4px"
+              maxW="xl"
+              ml="20px"
+              mr="100px"
+              placeholder="Confirm Password"
+              // onChange={()=>setPassword(e.target.value)}
+            />
+          </Box>
 
-              <Box maxW={"2xl"} ml="-26px">
-                <Button
-                  mt="30px"
-                  color={"white"}
-                  // w="100%"
-                  w={"xl"}
-                  colorScheme="orange"
-                  onClick={handleSubmit}
-                >
-                  Sign Up
-                </Button>
-              </Box>
+          <Box maxW={"2xl"} ml="-26px">
+            <Button
+              mt="30px"
+              color={"white"}
+              // w="100%"
+              w={"xl"}
+              colorScheme="orange"
+              onClick={handleSubmit}
+            >
+              Sign Up
+            </Button>
+          </Box>
           <Text mt="10px" fontSize={"sm"} textDecor="underline">
             Already have a True Buy account? Log In!
           </Text>
@@ -161,7 +163,7 @@ const Signup = () => {
                       fontWeight="bold"
                       fontSize="md"
                     >
-                      Total Items: 2
+                      Total Items: 1
                     </Text>
                     <Flex>
                       <Box>
@@ -184,7 +186,7 @@ const Signup = () => {
                           fontWeight="bold"
                           fontSize="md"
                         >
-                          Rs 6,598.00{" "}
+                          Rs 2,199.00{" "}
                         </Text>{" "}
                       </Box>
                     </Flex>
@@ -221,7 +223,7 @@ const Signup = () => {
                     fontWeight="bold"
                     fontSize="md"
                   >
-                    Rs 2199.34{" "}
+                    Rs 2,199{" "}
                   </Text>
                 </Flex>
               </Box>

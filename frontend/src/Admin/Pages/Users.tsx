@@ -3,6 +3,7 @@ import { getUsers } from "../features/users/userSlice";
 import { useAppDispatch, useAppSelector } from "../features/hooks";
 import { Box, Flex, Heading, Image } from "@chakra-ui/react";
 import loader from "../assets/loader.gif";
+import Navbar from "../components/Navbar";
 
 const AdminUsers = () => {
   const dispatch = useAppDispatch();
@@ -15,10 +16,11 @@ const AdminUsers = () => {
   }, []);
   return (
     <Box>
-      <Heading>Users</Heading>
+      <Navbar />
+      <Heading mb={"20px"}>Users</Heading>
       <Box>
         {users.users.map((user) => (
-          <Box key={user._id}>{user.email}</Box>
+          <Heading fontSize={"18px"} mb={"10px"} key={user._id}>{user.email}</Heading>
         ))}
       </Box>
       {users.loading ? (
