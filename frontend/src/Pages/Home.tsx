@@ -58,9 +58,11 @@ export default function Home() {
     dispatch(getProducts());
   }, []);
   return (
-    <Box>
+    <Box width={["100%","100%","100%"]}>
       <Navbar />
+      <Box>
       <Slider />
+      </Box>
       <Flex justifyContent={"space-evenly"} mb="30px">
         <Box width={"25%"}>
           <Heading textAlign={"left"} size={{ base: "sm", md: "md", lg: "lg" }}>

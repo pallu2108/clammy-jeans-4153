@@ -174,7 +174,7 @@ export default function Navbar() {
     <Box>
       <Box mb={"15px"}>
         <Flex>
-          <Flex>
+          <Flex flexWrap={"wrap"} >
             <Link to="/">
               <Image width={"150px"} src={truelogo} alt="" />
             </Link>
